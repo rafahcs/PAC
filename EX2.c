@@ -1,39 +1,31 @@
-/*Faça um programa para processar os 500 funcionários de uma empresa. Para cada funcionário, 
-o programa deverá ler  o  código  do  departamento  no  qual  ele  trabalha (número  inteiro 
-de  1  a  10)  e  o  salário.  O  programa  deverá exibir o menor salário de cada departamento. 
-Faça as seguintes funções:
-a)inicializa: recebe como parâmetro um vetor de números reais e inicializa-o apropriadamente.
-b)exibe:  recebe  como  parâmetro  um  vetor  de números  reais já  preenchido  e  exibe  o 
-menor salário de  cada departamento.*/
+/*Um posto de gasolina deseja fazer uma análise das vendas dos combustíveis comercializados 
+nos 31 dias do mês de agosto de 2021. O posto comercializa 4 tipos diferentes de combustível. 
+Escreva uma função que recebe como parâmetros  duas  matrizes  já  preenchidas.  A  primeira
+matriz  contém  as  quantidades  vendidas  de  cada  tipo  de combustível  em  cada  dias  
+do  mês  de  agosto  e  a  segunda  matriz  contém  os  preços  de  venda  de  cada  tipo  
+decombustível em cada dia do mês de agosto. Esta função deverá exibir:
+a)Para cada tipo de combustível: o valor total das vendas no mês de agosto;
+b)Para cada dia do mês: o valor total das vendas de todos os tipos de combustível.*/
 
-#include<stdio.h>
-#define MAX 50
-#define DEP 10
-void inicializa(float v[])
-{int i;
-for(i=0;i<DEP;i++)
-v[i]=0;
+
+void posto(int m1[][31], float m2[][31])
+{int i,k;
+float smtipo,somatipo,smdia,somadia;
+for(i=0;i<4;i++)
+{for(k=0;k<31;k++)
+{smtipo=m1[i][k]*m2[i][k];
+somatipo+=smtipo;
 }
-
-void exibe(float v[])
-{int i;
-float sal,menor=-1;
-for(i=0;i<DEP;i++)
-printf("\nDepartamento %d:%.2f",i+1,v[1]);
 }
 
-int main()
-{int cod,i;
-float vet[MAX],sal;
-inicializa(vet);
-    for(i=0;i<MAX;i++)
-{printf("\nDigite o codigo e o salario:");
-scanf("%d%f",&cod,&sal);
-if(vet[cod-1]==0)
-vet[cod-1]=sal;
-else
-vet[cod-1]=sal;
+for(k=0;k<31;k++)
+{for(i=0;i<4;i++)
+{smdia=m1[k][i]*m2[k][i];
+somadia+=smdia;
 }
-exibe(vet);
-return 0;
 }
+
+}
+
+
+

@@ -1,39 +1,18 @@
-/*Faça um programa que leia as notas (número inteiro de 0 a 10) dos alunos de uma turma e
-exiba a quantidade de alunos em cada nota, conforme exemplo abaixo. Término da leitura: 
-nota = -1. Faça as seguintes funções:
-a)inicializa: recebe como parâmetro um vetor de números inteiros e inicializa-o apropriadamente.
-b)exibe:recebe como parâmetro um vetor de números inteiros já preenchido e exibe a 
-quantidade de alunos em cada nota conforme exemplo abaixo.
-Nota 0: 2
-Nota 1: 4
-...Nota 10: 8*/
+/*Faca  uma  funcao  que  receba  como  parametros  uma  matriz  6  X  12  de  inteiros,  
+ja  preenchida,  contendo  a quantidade mensal vendida do carro Gol nos anos de 2010 a 2015 
+e um vetor contendo o preco do carro nos anos de 2010 a 2015. 
+A funcao devera exibir o valor total das vendas do carro Gol em cada ano (2010 a 2015).*/
 
-#include<stdio.h>
-#define TOT 11
 
-void inicializa(int v[])
-{int i;
-for(i=0;i<TOT;i++)
-v[i]=0;   
+void gol(int m[][12],float v[])
+{int qtd=0;
+float total, soma=0;
+    for(i=0;i<ANO;i++)
+{for(k=0;k<COL;k++)
+{qtd+=m[i][k];
+total=qtd*v[i];
+soma+=total;
 }
-
-void exibe(int v[])
-{int i,novo;
-for(i=0;i<TOT;i++)
-    {novo=v[i]+1;
-        printf("\nNota %d: %d",i,novo);
-    }
 }
-
-int main ()
-{int vqtd[TOT],nota;
-printf("Digite a nota do aluno ou -1 para encerrar:");
-scanf("%d",&nota);
-inicializa(vqtd);
-while(nota != -1)
-{exibe(vqtd);
-printf("\nDigite a nota do aluno ou -1 para encerrar:");
-scanf("%d",&nota);
-}
-    return 0;
+    printf("Valor total das vendas(2010 a 2015):",soma);
 }
