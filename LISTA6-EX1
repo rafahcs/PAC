@@ -1,0 +1,39 @@
+/*Faça apenas as duas funções auxiliares abaixo.
+a)Faça a função leValidaTipoque leia e valide o tipo do produto (1-fruta, 2-legume, 3-verdura). A função deverá 
+retornar o tipo validado.
+b)Faça uma função, utilizando a função acima, que receba a quantidade de produtos comercializados por uma loja como 
+parâmetro.A função deverá ler para cada produto o código e o tipo (1-fruta, 2-legume, 3-verdura), descobrir a 
+quantidade de produtos que são do tipo 1, a quantidade de produtos que são do tipo 2 e a quantidade de produtos que 
+são do tipo 3. Para isto a função irá guardar as quantidades nas variáveis cujos endereços são fornecidos na chamada
+da função.
+*/
+
+int leValidaTipoque(int *qnt)
+{ int tipo;
+  do
+  {printf("1-fruta, 2-legume, 3-verdura): ");
+   printf("Digite o tipo do produto:"); 
+   scanf("%d",&tipo);
+  }  while(tipo>3||tipo<1);
+  return tipo; 
+}
+
+void produto(int qnt, int *qnt1, int *qnt2, int *qnt3)
+{int cod,prod,tipo;
+  prod=0;
+while(prod<qnt)
+{ printf("Digite o codigo do produto:");
+  scanf("%d%d",&cod);
+    tipo=leValidaTipoque(&qnt);
+    if(tipo==1)
+      *(qnt1)++;
+    else
+       if(tipo==2)
+         *(qnt2)++;
+        else
+        *(qnt3)++;   
+prod++;
+} 
+return 0;
+}
+
